@@ -1,0 +1,50 @@
+#
+# function to crop and shrink the output gif
+# and write it to the right file
+#
+alter()
+{
+  convert out.gif -crop 200x125 -resize 20% $1
+}
+
+#
+# Standard stand-alone neumes
+#
+gfont -Fmf:neumes -a8 " l "; alter Virga.gif
+gfont -Fmf:neumes -a8 " / "; alter Pes.gif
+gfont -Fmf:neumes -a8 " n "; alter Clivis.gif
+gfont -Fmf:neumes -a8 " u "; alter Porrectus.gif
+gfont -Fmf:neumes -a8 " a "; alter Torculus.gif
+gfont -Fmf:neumes -a8 " : "; alter Pressus.gif
+gfont -Fmf:neumes -a8 " ; "; alter Pressus-subpunctis.gif
+gfont -Fmf:neumes -a8 " m "; alter Pressus-liquescens.gif
+gfont -Fmf:neumes -a8 " w "; alter Quilisma.gif
+gfont -Fmf:neumes -a8 " . "; alter Punctum.gif
+gfont -Fmf:neumes -a8 " o "; alter Punctum-round.gif
+gfont -Fmf:neumes -a8 " , "; alter Stropha.gif
+gfont -Fmf:neumes -a8 " s "; alter Oriscus.gif
+gfont -Fmf:neumes -a8 " d "; alter Epiphonus.gif
+gfont -Fmf:neumes -a8 " p "; alter Cephalicus.gif
+
+#
+# Compound forms of neumes
+#
+gfont -Fmf:neumes -a8 " - "; alter Pes-compound.gif
+gfont -Fmf:neumes -a8 " N "; alter Clivis-compound.gif
+gfont -Fmf:neumes -a8 " U "; alter Porrectus-compound.gif
+gfont -Fmf:neumes -a8 " [ "; alter Pressus-compound.gif
+gfont -Fmf:neumes -a8 " ] "; alter Pressus-subpunctis-compound.gif
+gfont -Fmf:neumes -a8 " M "; alter Pressus-liquescens-compound.gif
+gfont -Fmf:neumes -a8 " W "; alter Quilisma-compound.gif
+gfont -Fmf:neumes -a8 " D "; alter Epiphonus-compound.gif
+gfont -Fmf:neumes -a8 " P "; alter Cephalicus-compound.gif
+gfont -Fmf:neumes -a8 " J "; convert out.gif -resize 20% Liquescens-compound.gif
+
+#
+# Compound neumes
+#
+gfont -Fmf:neumes -a8 " -U "; alter Pes-porrectus.gif
+gfont -Fmf:neumes -a8 " -] "; alter Pes-pressus-subpunctis.gif
+gfont -Fmf:neumes -a8 " UN "; alter Porrectus-clivis.gif
+gfont -Fmf:neumes -a8 " WP "; alter Quilisma-cephalicus.gif
+gfont -Fmf:neumes -a8 " WU "; alter Quilisma-porrectus.gif

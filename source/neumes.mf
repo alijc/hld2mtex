@@ -1,0 +1,393 @@
+% neumes.mf
+% font for Hildegard's neumes
+
+mode_setup;
+em#:=10pt#; cap#:=8pt#; dep#:=2pt#;
+define_pixels(em,cap,dep);
+xhook#:=10pt#; yhook#:=5pt#;
+dotsize#:=8pt#;
+  
+%%% definitions for using a quill
+def pickpen   = pickup penrazor xscaled 1.2pt yscaled .1pt rotated 45; enddef;
+def pickvirga = pickup penrazor xscaled 1.2pt yscaled .1pt rotated 60; enddef;
+
+%screenstrokes;
+% macro to clear the screen
+%def cc = clearit; showit; enddef;
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% little, bitty, discrete notes
+% (puncta, strophae and orisci)
+
+% Punctum macros
+% Used by itself for a punctum, and as the head of a virga.
+def tailed_punctum =
+  x1 := x;		y1 := y+dotsize#;
+  x2 := x1+dotsize#;	y2 := y;
+  x3 := x2+dotsize#;	y3 := y+dotsize#;
+  pickpen; 
+  draw z1{1,-1}..z2..z3;
+  penlabels(1,2,3);
+enddef;
+
+% Used by itself for a simple punctum, and in the pressus subpunctis 
+def tailless_punctum =
+  x1 := x;		y1 := y;
+  x2 := x1+dotsize#;	y2 := y-dotsize#;
+  pickpen; 
+  draw z1{1,-1}..z2;
+  penlabels(1,2);
+enddef;
+
+% punctum
+beginchar(".",.05em#,cap#,dep#) "punctum (.)";
+  x = 0; y = 0;
+  tailed_punctum;
+endchar;
+
+%% tailless_punctum
+beginchar("o",.05em#,cap#,dep#) "tailless punctum (o)";
+  x = 0; y = 0;
+  tailless_punctum;
+endchar;
+
+% stropha
+beginchar(",",1/16em#,cap#,dep#) "stropha (,)";
+  x1 := 0;	y1 := 0;
+  x2 := w;	y2 := -1/2d;
+  x3 := x1;	y3 := -d;
+  pickpen; 
+  draw z1..z2..z3;
+  penlabels(1,2,3);
+endchar;
+
+% oriscus
+beginchar("s",1/8em#,cap#,dep#) "oriscus (s)";
+  x1 := 1/2w;   y1 := d;
+  x2 := 0;	y2 := 1/2d;
+  x3 := x1;	y3 := 0;
+  x4 := w;	y4 := -1/2d;
+  x5 := x1;	y5 := -d;
+  pickpen; 
+  draw z1..z2..z3..z4..z5;
+  penlabels(1,2,3,4,5);
+endchar;
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% straight strong notes
+% (virgae and pedes)
+
+def virga =
+  % Draw something like a punctum for the top.
+  x1 := w-(dotsize#);	y1 := h+dotsize#;
+  x2 := x1+dotsize#;	y2 := h;
+  x3 := x2+dotsize#;	y3 := h+(1.5.dotsize#);
+  pickpen; 
+  draw z1{right}..{down}z2;
+  pickup penrazor xscaled 1.0pt yscaled .4pt rotated 30;
+  draw z2{up}..z3;
+  penlabels(1,2,3);
+
+  % Draw a straight downward line.
+  x4 := w;	y4 := h;
+  x5 := w;	y5 := 0;
+  pickpen;
+  draw z4--z5;
+  penlabels(4,5);
+enddef;
+
+def bottom_of_pes =
+  x1 := 0;	y1 := 0;
+  x2 := w;	y2 := y1;
+  pickpen; 
+  draw z1{(2,3)}..z2;
+  penlabels(1,2);
+enddef;
+
+% virga
+% Cannot be postpended
+beginchar("l",0,cap#,dep#); "virga (l)";
+  virga;
+endchar;
+
+% Compound form of pes.
+% Can be postpended by virga (making a real pes),
+% clivis, porrectus, cephalicus, pressus, cephalicus
+beginchar("-",1/2em#,cap#,dep#) "bottom of pes (-)";
+  bottom_of_pes;
+endchar;
+
+% Normal form of pes
+beginchar("/",1/2em#,cap#,dep#) "pes (/)";
+  virga;
+  bottom_of_pes;
+endchar;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% strong, round notes
+% (clives, porrecti, torculi)
+
+% clivis
+% Cannot be postpended (use the compound form instead)
+beginchar("n",.7em#,cap#,dep#) "clivis (n)";
+  x1 := 0;	y1 := -d;
+  x2 := 1/16w;	y2 := 7/8h;
+  x3 := 1/4w;   y3 := h;
+  x4 := 2/3w;   y4 := -d;
+  x5 := w;	y5 := 0;
+  pickpen; 
+  draw z1{1,2}..{up}z2{1,1}..{1,1}z3{right}..{down}z4 & z4{right}..{1,1}z5;
+  penlabels(1,2,3,4,5);
+endchar;
+
+% Compound form of clivis
+% Can be postpended by low liquescens
+beginchar("N",.7em#,cap#,dep#) "compound form of clivis (N)";
+  x1 := 0;	y1 := 0;
+  x2 := 0;	y2 := 15/16w;
+  x3 := 3/16w;   y3 := h;
+  x4 := 2/3w;   y4 := -d;
+  x5 := w;	y5 := 0;
+  pickpen; 
+  draw z1{up}..{up}z2{1,1}..{1,1}z3{right}..{down}z4 & z4..{right}z5;
+  penlabels(1,2,3,4,5);
+endchar;
+
+def porrectus =
+  x1 := 0;	y1 := 0;
+  x2 := 1/3w;   y2 := h;
+  x3 := 2/3w;   y3 := -d;
+  x4 := w;	y4 := 0;
+  pickpen; 
+  draw z1{up}..z2..z3..{up}z4;
+enddef;
+
+% Compound form of porrectus
+% Cannot be postpended (use a clivis instead)
+beginchar("U",.8em#,cap#,dep#) "compound form of porrectus (U)";
+  x1 := 0;	y1 := 0;
+  x2 := 0;	y2 := 7/8h;
+  x3 := 1/6w;   y3 := h;
+  x4 := 2/3w;   y4 := -d;
+  x5 := w;	y5 := 0;
+  x6 := w;	y6 := h;
+  pickpen; 
+  draw z1{up}..{up}z2{1,1}..{1,1}z3{right}..z4..{up}z5--z6;
+  penlabels(1,2,3,4,5,6);
+endchar;
+
+% Normal form of porrectus
+% Cannot be postpended
+beginchar("u",.8em#,cap#,dep#) "porrectus (u)";
+  x1 := 0;	y1 := -d;
+  x2 := 0;	y2 := 7/8h;
+  x3 := 1/6w;   y3 := h;
+  x4 := 2/3w;   y4 := -d;
+  x5 := w;	y5 := 0;
+  x6 := w;	y6 := h;
+  pickpen; 
+  draw z1{1,2}..{up}z2{1,1}..{1,1}z3{right}..z4..{up}z5--z6;
+  penlabels(1,2,3,4,5,6);
+endchar;
+
+% torculus
+% Can be postpended by virga, clivis, porrectus, pressus, cephalicus
+% or low liquescens
+beginchar("a",7/8em#,cap#,dep#) "torculus (a)";
+  x1 := 1/9w;	y1 := 0;
+  x2 := 2/8w;   y2 := -d;
+  x3 := 1/2w;   y3 := h;
+  x4 := 3/4w;   y4 := -d;
+  x5 := w;	y5 := 0;
+  pickpen; 
+  draw z1..z2{2,1}..z3..{down}z4 & z4{right}..{1,1}z5;
+  penlabels(1,2,3,4,5);
+endchar;
+
+%%%%%%%%%%%%%%%%%%
+% pressi
+
+def common_pressus =
+  x3 := 1/4w;   y3 := h;
+  x4 := 2/4w;   y4 := 7/8h;
+  x5 := 3/4w;   y5 := h;
+  x6 := w;	y6 := y4;
+  pickpen; 
+  draw z3{1,-1}..{1,-1}z4 & z4{1,1}..{1,1}z5{1,-1}..{1,-1}z6;
+  penlabels(3,4,5,6);
+enddef;
+
+def simple_pressus =
+  x1 := 0;	y1 := -d;
+  x2 := 1/16w;	y2 := 7/8h;
+  x3 := 1/4w;   y3 := h;
+  pickpen; 
+  draw z1{1,2}..{up}z2{1,1}..z3;
+  penlabels(1,2,3);
+  common_pressus;
+enddef;
+
+def compound_pressus =
+  x1 := 0;	y1 := 0;
+  x2 := 0;	y2 := 7/8h;
+  x3 := 1/4w;   y3 := h;
+  pickpen; 
+  draw z1{up}..{up}z2{1,1}..z3;
+  penlabels(1,2,3);
+  common_pressus;
+enddef;
+
+% simple pressus
+% Cannot be postpended (see pressus liquescens, below)
+beginchar(":",.5em#,cap#,dep#) "pressus (:)";
+  simple_pressus;
+endchar;
+
+% compound form of simple pressus
+% Cannot be postpended (see pressus liquescens, below)
+beginchar("[",.5em#,cap#,dep#) "compound form of pressus ([)";
+  compound_pressus;
+endchar;
+
+% pressus subpunctis
+% Cannot be postpended
+beginchar(";",.5em#,cap#,dep#) "pressus subpunctis (;)";
+  simple_pressus;
+  x = 1/2w;	y = 5/8h;
+  tailless_punctum;
+endchar;
+
+% compound form of pressus subpunctis
+% Cannot be postpended
+beginchar("]",.5em#,cap#,dep#) "compound form of pressus subpunctis (])";
+  compound_pressus;
+  x = 1/2w;	y = 5/8h;
+  tailless_punctum;
+endchar;
+
+% pressus liquescens
+% (formed as a single neume, rather than as a compound
+% of a pressus and a liquescens, because the liquescens
+% curves so much under the body of the pressus)
+% Cannot be postpended
+
+% pressus liquescens - simple form
+beginchar("m",.5em#,cap#,dep#) "pressus liquescens (m)";
+  simple_pressus;
+  x6 := w;	y6 := 7/8h;
+  x7 := 1/2w;	y7 := -d;
+  draw z6{down}..z7;
+  penlabels(6,7);
+endchar;
+
+% pressus liquescens - compound form
+beginchar("M",.5em#,cap#,dep#) "compound form of pressus liquescens (M)";
+  compound_pressus;
+  x6 := w;	y6 := 7/8h;
+  x7 := 1/2w;	y7 := -d;
+  draw z6{down}..z7;
+  penlabels(6,7);
+endchar;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% % quilismae
+
+def quilisma =
+  x1 := 1/9w;   y1 := 0;
+  x2 := 2/8w;   y2 := -d;
+  x3 := 4/8w;   y3 := y1;
+  x4 := 6/8w;   y4 := y2;
+  x5 := w;	y5 := 0;
+  pickpen; 
+  draw z1..z2..{up}z3 & z3{down}..z4..{up}z5;
+enddef;
+
+% Compound form of quilisma
+% Can be postpended by virga, clivis, porrectus, pressus, cephalicus
+beginchar("W",.7em#,cap#,dep#); "compound from of quilisma (W)";
+  quilisma;
+  penlabels(1,2,3,4,5);
+endchar;
+
+% Normal from of quilisma
+% Cannot be postpended
+beginchar("w",.7em#,cap#,dep#); "quilisma (w)";
+  quilisma;
+  x6 := 4/3w;	y6 := h;
+  draw z5{up}..{right}z6;
+  penlabels(1,2,3,4,5,6);
+endchar;
+
+%%%%%%%%%%%%%%%%%%%%%%
+% liquescent notes
+% (epiphoni, cephalici and liquescensi
+
+% compound form of epiphonus
+beginchar("D",.25em#,cap#,dep#) "compound form of epiphonus (D)";
+  x1 := 0;      y1 := 0;
+  x2 := x1;	y2 := -d;
+  x3 := w;	y3 := 0;
+  pickpen; 
+  draw z1..z2..{up}z3;
+  penlabels(1,2,3);
+endchar;
+
+% epiphonus
+% Cannot be postpended
+beginchar("d",.5em#,cap#,dep#) "epiphonus (d)";
+  x1 := 1/3w;   y1 := 1/2h;
+  x2 := x1;	y2 := 0;
+  x3 := w;	y3 := h;
+  pickpen; 
+  draw z1..z2..{right}z3;
+  penlabels(1,2,3);
+endchar;
+
+% Compound form of cephalicus
+beginchar("P",.5em#,cap#,dep#) "compound form of cephalicus (P)";
+  x1 := 0;	y1 := 0;
+  x2 := 0;	y2 := 7/8h;
+  x3 := 1/4w;   y3 := h;
+  x4 := 0;	y4 := 3/8h;
+  pickpen; 
+  draw z1{up}..{up}z2{1,1}..z3..{-1,-1}z4;
+  penlabels(1,2,3,4);
+endchar;
+
+% Simple form of cephalicus
+beginchar("p",.5em#,cap#,dep#) "cephalicus (p)";
+  x1 := 0;	y1 := -d;
+  x2 := 1/16w;	y2 := 7/8h;
+  x3 := 1/4w;   y3 := h;
+  x4 := 1/3w;   y4 := 3/8h;
+  pickpen; 
+  draw z1{1,1}..{up}z2{1,1}..z3..{-1,-1}z4;
+  penlabels(1,2,3,4);
+endchar;
+
+def liquescens =
+  x2 := x1;	y2 := y1-h;
+  pickpen;
+  draw z1{right}..{(-1,-1)}z2;
+  penlabels(1,2);
+enddef;
+
+beginchar("j",1/2em#,cap#,dep#) "liquescens (j)";
+  x1 := 0;	y1 := 0;
+  x2 := 1/2w;	y2 := h;
+  x3 := 1/2w;	y3 := -2d;
+  pickpen;
+  draw z1{up}..z2{right}..{(-1,-1)}z3;
+  penlabels(1,2,3);
+endchar;
+
+beginchar("J",1/4em#,cap#,dep#) "compound form of liquescens (J)";
+  x1 := 0;	y1 := 0;
+  x2 := x1;	y2 := y1-h;
+  pickpen;
+  draw z1{right}..{(-1,-1)}z2;
+  penlabels(1,2);
+endchar;
+
+end

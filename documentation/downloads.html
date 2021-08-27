@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>hld2mtex - Downloading and Installing</title>
+</head>
+<body>
+
+<table width=100%><tr>
+<td align=left>  <a href="./transcripts.html">Back to Transcriptions</a>
+<td align=center><a href="./index.html">  Up to Top</a>
+<td align=right> <a href="./wish-list.html"> Forward to Wish List</a>
+</table>
+<hr>
+<p>
+
+<h1>Downloading and Installing</h1>
+
+If you don't already have them, you need to get 
+<i>TeX</i>, <i>MusiXTeX</i>, and  <i>Perl</i>.
+You can get them off of a CD, from your favorite
+download site, or, if all else fails, go to the websites at
+<a href="http://www.math.upenn.edu/TeX.html">http://www.math.upenn.edu/TeX.html</a>,
+<a href="http://icking-music-archive.org/software/indexmt6.html">http://icking-music-archive.org/software/indexmt6.html</a>,
+and <a href="http://www.perl.com">http://www.perl.com</a>.
+Install these, following the instructions for your platform.
+
+<p>
+Then get <a href="./source/neumes.mf">neumes.mf</a> and
+<a href="./source/hld2mtex">hld2mtex</a> from here.  
+You'll need to put `hld2mtex' into a directory that's 
+in your path, and you may need to make it executable.
+You should put `neumes.mf' into the tex directory 
+structure, perhaps into the same directory where the
+musix mf files are.  Then you may need to run a command
+called `mktexlsr' to let tex know where everything is.
+
+<p>
+(The current font tries to look like it was written with a quill.
+An older one used a ballpoint pen.  It you'd prefer that one you
+can still find it <a href="./source/neumes-round.mf">here</a>.
+
+<p>
+To test things out, download <a href="./examples/alleluia.hld">
+alleluia.hld</a> from the 
+<a href="./transcripts.html">previous page</a>, and type:
+
+<pre>
+hld2mtex alleluia.hld
+tex alleluia.tex
+dvips alleluia.dvi
+</pre>
+
+If all goes well, you'll end up with a page of music on your
+printer.
+
+
+<p>
+If you'd like to grab all of the bits and pieces that I've
+made in one fell swoop, you can get either a <a href="../hld2mtex.zip">zipped
+</a> or <a href="../hld2mtex.tar.gz">tarred</a> file.  This includes the
+neumes.mf font and the hld2mtex script, along with these html pages
+and the transcriptions that I've done thus far.
+
+<p>
+<hr>
+<table width=100%><tr>
+<td align=left>  <a href="./transcripts.html">Back to Transcriptions</a>
+<td align=center><a href="./index.html">  Up to Top</a>
+<td align=right> <a href="./wish-list.html"> Forward to Wish List</a>
+</table>
+
+</body>
+</html>

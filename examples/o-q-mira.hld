@@ -1,0 +1,108 @@
+T:O quam mirabilis
+C:Hildegard von Bingen
+B:Reisenkodex
+M:None
+K:c
+X:+3
+
+O	.=C .=D l=E l=F .=E .=D .=C b@B .=A .=B l=C
+quam	n=DC
+mi-	/=EF
+ra-	l=D
+bi-	l=C
+lis	.=B
+est	n=DC
++L
+pre-	l=C
+ci-	..=E .=F l=G
+en-	p=aG
+ti-	u=FEF
+a 	l=G
+di-	l=G
+vi-	/=ab l=c .=b .=a .=G .=F .=G
+ni 	l=G
+pec-	l=G
+to-	.=C w=DE l=F b@B .=E .=D .=C .=B
+ris	a=CDC
++L
+que 	.=C .=E w=FG
+pre-	l=a
+ci-	u=FEF
+vit 	l=G
+om-	.=G w=Gb l=c .=b .=a .=G .=F
+nem 	l=G
++s
+cre-	l=G
+a-	.=C w=DE l=F .=E .=D .=C .=B
+tu-	n=DC
+ram.	l=C
++L
+Nam 	.=C .=E w=FG
+cum 	l=G
+De-	n=aG
+us 	n=FE
+in-	w=FG .=G w=Gb l=c .=b .=a .=G j=GF
+spe-	n=aG
+xit	l=G
++L
+fa-	l=G
+ci-	.=C
+em 	/=DE
+ho-	l=F b@B .=D .=C j=CB
+mi-	n=DC
+nis 	l=C
+quem 	l=C .=A .=G,
+for-	.=C .=D l=E l=G .=E .=D .=C j=C_B
+ma-	n=DC
+vit,	l=C
++L
+om-	.=C .=E w=FG u=cbc .=a .=G l=a
+ni-	u=FEF
+a 	l=G
+o-	l=G
+pe-	n=FE
+ra 	n=DC
+su-	l=D
+a	l=E
++L
+in 	l=E
+e-	n=ED
+a-	l=F
+dem 	l=E .=D .=C j=C_B
+for-	p=DC
+ma 	l=C
+ho-	.=C w=DE l=F .=E .=D .=C
+mi-	b@B /=BC
+nis	l=C
++L
+in-	p=DC
+te-	n=BA
+gra 	.=G,
+a-	.=C .=D l=E l=F b@B .=E .=D .=C .=B
+spe-	n=DC
+xit.	l=C
++L
+O 	.=C .=E w=FG s=G
+quam 	n=aG
+mi-	n=aG
+ra-	n=FE
+bi-	n=FE
+lis	n=DC
+est	/=DE
+in-	l=E
+spi-	.=C w=CE 
+ra-	l=F b@B .=D .=C
+ti-	/=BC
+o	l=C
++L
+que 	.=C .=E w=FG
+ho-	n=aG
+mi-	/=FG
+nem 	l=G
+sic 	.=G w=ab l=c .=b .=a .=G .=E .=F l=G 
++l
++H
+su-	l=G
+sci-	.=C w=CE 
+ta-	l=F .=D .=C l=D .=A .=G, .=C w=DE l=G .=F .=E .=D .=C .=_B 
+vit.	n=DC

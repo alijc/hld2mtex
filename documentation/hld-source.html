@@ -1,0 +1,133 @@
+<html>
+<head>
+<title>hld2mtex - Format of a .hld file</title>
+</head>
+<body>
+
+<table width=100%><tr>
+<td align=left>  <a href="./neume-font.html">Back to Font</a>
+<td align=center><a href="./index.html">  Up to Top</a>
+<td align=right> <a href="./example.html">   Forward to Example</a>
+</table>
+<hr>
+<p>
+
+<h1>Format of a .hld file</h1>
+
+The process all starts out with a text source file.
+By convention it has an extension of `.hld'.
+
+<p>
+Here's a short extract from a .hld file to use as an example:
+
+<pre>
+T:O quam mirabilis
+C:Hildegard von Bingen
+B:Reisenkodex
+X:+3
+
+O       .=C .=D l=E l=F .=E .=D .=C b@B .=A .=B l=C
+quam    n=DC
+mi-     /=EF
+mi-	/=EF
+ra-	l=D
+bi-	l=C
+lis	.=B
+est	n=DC
++L
+</pre>
+
+<p>
+It has two parts: the header, which gives general information
+about the song, and the body, which lays out all of the words,
+notes and neumes.  (Blank lines can be added anywhere - they
+will be ignored.)
+
+<h2>The Header</h2>
+
+Each line of the header starts with a capital letter, followed
+by a `:', followed by some text.  (If you guessed that I 
+borrowed this format from abc format, you get two points.)
+
+<p>
+<table border=2 cellpadding=3>
+<tr><th>Letter</th><th>Meaning</th><th>Example</th>
+<tr><td>T:</td><td>Title</td><td>T:O magne Pater</td>
+<tr><td>C:</td><td>Composer</td><td>C:Hildegard von Bingen</td>
+<tr><td>B:</td><td>Book</td><td>B:Reisenkodex</td>
+<tr><td colspan="3"> Optional Header Lines</td>
+<tr><td>X:</td><td>Transposition (number of half-steps)</td><td>X:-3</th>
+<tr><td>O:</td><td>Whether to use an octave clef</td><td>O:1</th>
+<tr><td>Q:</td><td>Whether to show the optional notes of a quilisma</td><td>Q:0</th>
+</table>
+
+<h2>The Body</h2>
+
+The body of the file is made up of note lines and spacing lines.
+
+<h3>Note Lines</h3>
+
+A note line consists of a single syllable, followed by one or
+more neume-note groups.
+
+<p>
+The syllable will be be printed on the lyrics line, under
+the first of its notes.
+
+<p>
+Each neume-note group consists of one or more neume keys
+(see <a href="./neume-font.html">previous section</a>), 
+followed by one or more notes.
+
+<p>
+The notes are the same as in abc format.  `A' is the A
+below middle C, `B' through `G' are in the octave above
+it, and `a' through `g' represent the next octave.
+If you have to go higher than that then use a lower
+case letter and stick an apostaphe after it (a').
+If you need to go lower, then stick a comma after a
+upper case letter (G,).
+
+<p>
+For example, "<samp>nos	.=e w=eg l=a'</samp>"
+would represent the syllable "nos" sung on a
+punctum on e, a quilisma on e to g, and a virga
+on a.
+
+<h4>Accidentals</h4>
+
+You can add a flat sign into the score by inserting
+"<samp>b@b</samp>" into the proper place in the list
+of neume-note groups.  (The first `b' asks for a flat,
+while the second asks for it to be placed on the b
+above middle c.) 
+
+<p>
+You can add an editorial flat by inserting a `_'
+before the note that needs to be flatted.  For example,
+"<samp>Wn=G_ba</samp>".
+
+<h3>Spacing Lines</h3>
+
+<p>
+A spacing line consists of a `+', followed by one or more
+characters, whose meaning is as follows:
+<table border=2 cellpadding=3>
+<tr><td>b </td><td> a bar 
+<tr><td>l </td><td> a new line 
+<tr><td>L </td><td> a bar & a new line
+<tr><td>s </td><td> a little bit of extra horizontal space
+<tr><td>H </td><td> a chunk of horizontal space
+<tr><td>V </td><td> a chunk of vertical space
+</table>
+
+<p>
+<hr>
+<table width=100%><tr>
+<td align=left>  <a href="./neume-font.html">Back to Font</a>
+<td align=center><a href="./index.html">  Up to Top</a>
+<td align=right> <a href="./example.html">   Forward to Example</a>
+</table>
+
+</body>
+</html>

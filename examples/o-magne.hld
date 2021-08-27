@@ -1,0 +1,136 @@
+T:O magne Pater
+C:Hildegard von Bingen
+B:Reisenkodex
+M:None
+K:a
+X:-3
+
+O	u=aGa
+mag-	m=ddc
+ne	l=a
+Pa-	l=c .=b .=a .=G 
+ter,	l=a
++b
+in	l=a .=G .=E
+mag-	d=Ga
+na	l=a
+ne-	l=a
+ces-	l=b
+si-	/=cd
+ta-	n=dc
+te	n=ba
+su-	l=a .=G .=E l=G
+mus.	l=a
++L
+Nunc	/=ab
+i-	/=cd
+gi-	l=e
+tur	l=d .=c .=b .=a
+ob-	l=c
+se-	l=c
+cra-	l=b .=a .=G
+mus,	l=a
++L
+ob-	l=E
+se-	l=G
+cra-	l=a
+mus	l=c
+te	u=cGa
++b
+per	/=ae .=d .=c n=dc w=de
+Ver-	/=df
+bum	l=g
+tu-	n=gf
+um,	n=gf .=f .=f .=e .=d
++L
+per	p=dc
+quod	/=ef
+nos	n=dc .=d WN=dfe
+con-	p=ed
+stu-	/=ef
+i-	n=dc
+sti	u=dcd .=d WN=dfe
+ple-	/=ef
+nos	n=dc
++L
+qui-	n=dc
+bus	n=ba
+in-	.=G
+di-	b@b .=a .=b l=c
+ge-	n=ba
+mus.	n=GF .=G WN=Gba
++L
+Nunc	/=ae
++s
+pla-	.=d
+ce-	l=e
+at	l=e
+ti-	/=eg
+bi,	l=a'
+Pa-	n=a'g
+ter,	n=fe
++b
+qui-	/=ef
+a	n=dc
+te	n=dc
+de-	a=ded
+cet,	-]=effe
++L
+ut	/=ef
+a-	n=dc
+spi-	b@b n=dc
+ci-	n=ba
+as	.=G
+in	l=c
+nos	n=ba
++b
+per	l=a
+a-	l=b
+dui-	l=c
+to-	.=e w=eg
+ri-	n=fe
+um	p=dc
+tu-	.=d w=df .=e .=d
+um,	l=e
++L
+ut	/=ef
+non	p=dc
+de-	l=d .=a .=G
+fi-	l=c
+ci-	/=de
+a-	l=e
+mus,	.=a w=ac .=a .=G WN=G_ba
++L
+et	l=a
+ne	/=ae
+no-	.=d
+men	l=e
+tu-	/=eg
+um	l=a'
+in	p=a'g
+no-	l=a'
+bis	l=g .=f .=e .=d w=de
+ob-	/=ef
+scu-	n=dc
+re-	u=dcd
+tur,	.=d WN=dfe
++L
+et	/=ef
+per	n=dc
+ip-	n=dc s=c
+sum	n=aG
+no-	.=c w=de l=f .=d .=c b@b s=c
+men	l=b
+tu-	l=c
+um	n=ba
++L
+dig-	l=e
+na-	.=d
+re	l=e
+nos	.=e w=eg l=a'
+a-	p=a'g
+diu-	l=a'
+va-	l=g .=f .=e .=d w=de 
+(re)	;=aaG .=c w=ce l=f .=d .=c
+re.	b@b a=bca .=G WN=aca
+

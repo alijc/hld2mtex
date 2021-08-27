@@ -1,0 +1,47 @@
+2004-03-14
+In the perl script...
+...added a margin to the bottom of the staff, to shift the lyrics down a bit.
+...added a Q:0 option to turn off the display of optional quilisma notes.
+
+2004-02-22
+Added the new characters to the round font.
+
+2004-02-22
+Did more nudging to the head of the virga, and the beginning strokes 
+of just about everything else.  Also, split apart all of the pressi
+into simple (';',';','m') and compound ('[',']','M') forms.
+
+2004-02-21
+In the quill font, changed the round punctum (now known as the tailless
+punctum) from a dot to a diagonal stroke.  (and used it in the pressus
+subpunctis)
+Nudged the virga and the pes slightly.
+Fixed the tail of the singleton clivis.
+Nudged the cephalicus a bit.
+Nudged the torculus.
+
+2004-02-21
+Added a compound form of the clivis (using 'N') to both fonts.
+Changed the original clivis ('n') to look better.
+Changed the already transcribed music to use 'N' for compound clives.
+
+2004-02-20
+In the quill font...
+...reused the punctum as the head of the virga.
+...added a new round punctum, using the character 'o'.
+...changed the tops of the pressi to be more angular.
+...changed the tail of the torculus to be more like the clivis.
+In the ballpoint font...
+...added a duplicate punctum for the character 'o' (to be safe).
+
+2004-02-15
+Enhanced the existing font to add a hook to the virga,
+and to fill in the circle for the punctum.
+Created a new font to simulate a quill.
+
+2004-02-02
+Added an optional "O:1" field to request a tenor clef.
+
+
+2004-02-02
+Changed liquescents from small hollow notes to small solid ones.
